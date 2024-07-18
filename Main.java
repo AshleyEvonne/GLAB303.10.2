@@ -1,0 +1,62 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        Circle c = new Circle(100);
+        System.out.println("Area of circle " + c.getArea());
+
+        // Example of Object type casting
+        // declaration of object variable obj of the Shape class
+
+        // Shape sObj ; // object creation of the Shape class
+        Shape sObj = new Shape();
+        sObj.displaysShapeName();
+        System.out.println(sObj instanceof Shape); // true
+
+        //object creation of the Circle class
+        System.out.println("++++++++++++");
+
+        //it's fine because a Circle os a Sha[e by inheritance
+        Shape shapeCircleObj = new Circle(100); // upcasting
+        shapeCircleObj.displaysShapeName();
+        System.out.println("Area of circle " + shapeCircleObj.getArea());
+        System.out.println(shapeCircleObj); // Run circle's toString()
+        // Use instanceof operator for Validation
+        System.out.println(shapeCircleObj instanceof Circle); //true
+        System.out.println(sObj instanceof Circle); // false because Shape is not a Circle
+
+        System.out.println("-----------------");
+
+        Shape shapeRectangleObj = new Rectangle("Red"); // Upcasting
+        shapeRectangleObj.displaysShapeName();
+        shapeRectangleObj.setHeight(2);
+        shapeRectangleObj.setWidth(2);
+        System.out.println("Area of Rectangle is " + shapeRectangleObj.getArea());
+        System.out.println(shapeRectangleObj); // Run Rectangle's toString()
+        // Use instanceof operator for validation
+        System.out.println(shapeRectangleObj instanceof Rectangle); //true
+        System.out.println(sObj instanceof Rectangle);// false because Shape is not a Rectangle
+
+        System.out.println("-------------------");
+
+        Shape shapeTriangleObj = new Triangle("Blue"); //UpCasting
+        shapeTriangleObj.displaysShapeName();
+        shapeTriangleObj.setHeight(2);
+        shapeTriangleObj.setBase(3);
+        System.out.println("Area of Triangle is " + shapeTriangleObj.getArea());
+        System.out.println(shapeTriangleObj); // Run Triangl's toString()
+
+        //Use instanceof operator for Validation
+        System.out.println(shapeTriangleObj instanceof Triangle); // true
+        System.out.println(sObj instanceof Triangle); //false because shape is not a Triangle
+
+        System.out.println("------------------");
+
+        Cylinder cylinderShape = new Cylinder(3); //UpCasting
+        cylinderShape.displaysShapeName();
+        cylinderShape.setHeight(3);
+        System.out.println("Area of Cylinder is " + cylinderShape.getVolume());
+        System.out.println(cylinderShape); // Run cylinderShape's toString()
+
+    }
+}
